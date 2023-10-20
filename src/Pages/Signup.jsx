@@ -1,4 +1,3 @@
-
 import React from "react";
 import SideImage from "../Assets/signup.png";
 import Navbar from "../Components/Navbar";
@@ -7,8 +6,8 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <>
-      <Navbar />
-      <div className=" bg-gray-100">
+      {/* <Navbar /> */}
+      <div className="flex bg-gray-100">
         <div className="flex-1">
           <img className="h-screen" src={SideImage} alt="signupimage" />
         </div>
@@ -64,7 +63,7 @@ const Signup = () => {
             </div>
             <p className="mb-6">
               Already A Member?
-              <Link to="/" className="text-blue-500">
+              <Link to="/login" className="text-blue-500">
                 {" "}
                 Log In
               </Link>
