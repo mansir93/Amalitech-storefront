@@ -8,11 +8,11 @@ const Signup = () => {
   return (
     <>
       <Navbar />
-      <div className="border-2 flex justify-center bg-gray-100 text-sm">
+      <div className=" bg-gray-100">
         <div className="flex-1">
           <img className="h-screen" src={SideImage} alt="signupimage" />
         </div>
-        <div className="mt -10 ml- 28 flex flex-col justify-center items-center flex-[2]">
+        <div className=" flex flex-col justify-center items-center flex-[2]">
           <p className="text-5xl text-center text-blue-500 text-bold">
             Sign up
           </p>
