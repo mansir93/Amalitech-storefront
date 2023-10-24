@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { useAxios } from "../utils/ApiHook";
 import Navbar from "../Components/Navbar";
 import LoginImg from "../Assets/LoginImg.png";
 import PassiconImg from "../Assets/PassiconImg.png";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const { data, error, isLoading, ApiRequest } = useAxios();
+  console.log("isLoading", isLoading);
+  console.log("error", error);
+  console.log("data", data);
+
+  const initial = {
+    email: "",
+    password: "",
+  };
+  const [userData, setUserData] = useState(initial);
+  // console.log(userData);
+
+  const handleChange = (e) => {
+    setUserData({
+      ...userData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    ApiRequest("/Account/Login", "POST", userData, null);
+  };
   return (
     <div>
       {/* <Navbar /> */}
@@ -14,23 +37,26 @@ const Login = () => {
           <h1 className="text-5xl text-blue-500 font-bold">Log in</h1>
 
           <div className="flex justify-center w-[50%]">
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-4 ">
                 <div className="flex flex-col bg-white py-1 px-5 rounded-lg w-[300]">
                   <label className=" text-gray-400">E-mail</label>
                   <input
-                    type="text"
+                    type="email"
                     className="w-full email placeholder:text-black bg-none outline-none"
                     placeholder="test1@gmail.com"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="flex flex-col bg-white py-1 px-5 rounded-lg w-[300]">
                   <label className=" text-gray-400">Password</label>
                   <div className="flex justify-between items-center">
                     <input
-                      type="text"
+                      type="password"
                       className="password placeholder:text-black bg-none outline-none"
                       placeholder="Pass"
+                      onChange={handleChange}
+
                     />
                     <span>
                       <img
@@ -52,7 +78,7 @@ const Login = () => {
                   >
                     Forgot Password
                   </Link>
-                  <button className="bg-blue-500 text-white text-center rounded flex-1 p-2">
+                  <button type="submit" className="bg-blue-500 text-white text-center rounded flex-1 p-2">
                     Log in
                   </button>
                 </div>
