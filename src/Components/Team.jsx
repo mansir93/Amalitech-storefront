@@ -1,6 +1,7 @@
 import React from "react";
 import MansirImg from "../Assets/MansirImg.JPG";
 import KelvinIMg from "../Assets/kelvinImg.jpg";
+import BenIMg from "../Assets/benImg.jpg";
 
 const Team = () => {
   return (
@@ -25,12 +26,10 @@ const Team = () => {
             </p>
           </div>
           <div className="max-w-sm flex flex-col justify-center items-center gap-4">
-            <img src={MansirImg} alt="" className="w-60 h-60 rounded-full" />
-            <p>Mansir Abdul Aziz</p>
+            <img src={BenIMg} alt="" className="w-60 h-60 rounded-full" />
+            <p>Benjamin Frimpong</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti.
+             GRAPHIC & WEB DESIGNER
             </p>
           </div>
         </div>
