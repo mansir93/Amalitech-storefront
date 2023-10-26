@@ -7,7 +7,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const menulist = (
     <>
-      <Link to="/login" className="px-8 py-2 text-center w-40 rounded-md" >login</Link>
+      <Link to="/login" className="px-8 py-2 text-center w-40 rounded-md" >Login</Link>
 
       <Link to="/signup" className="px-8 py-2 text-center bg-blue-500 text-white w-40 rounded-md" >Register</Link>
     </>
