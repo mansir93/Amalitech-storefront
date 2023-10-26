@@ -21,7 +21,7 @@ export function useAxios() {
   const ApiRequest = async (path, method, body, params) => {
     setIsLoading(true);
     setMethod(method);
-    const url = `${process.env.REACT_APP_BASEURL}/api${path}`;
+    const url = `https://storefrontsmes-june-api.onrender.com/api` + path;
 
     try {
       const response = await axios({
@@ -41,7 +41,7 @@ export function useAxios() {
     } catch (error) {
       setError(error.response.data);
       if (!token) {
-        navigate("/login");
+        // navigate("/login");
       }
     } finally {
       setIsLoading(false);
