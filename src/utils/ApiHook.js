@@ -41,7 +41,7 @@ export function useAxios() {
     } catch (error) {
       setError(error.response.data);
       if (!token) {
-        navigate("/login");
+        // navigate("/login");
       }
     } finally {
       setIsLoading(false);

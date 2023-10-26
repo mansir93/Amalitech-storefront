@@ -21,9 +21,7 @@ const Team = () => {
             <img src={KelvinIMg} alt="" className="w-60 h-60 rounded-full" />
             <p>Kelvin Akyea </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti.
+              FRONTEND DEVELOPER || ROBOTICS AND I.O.T
             </p>
           </div>
           <div className="max-w-sm flex flex-col justify-center items-center gap-4">

@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SideImage from "../Assets/signup.png";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 import { useAxios } from "../utils/ApiHook";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const { data, error, isLoading, ApiRequest } = useAxios();
-  console.log("isLoading", isLoading);
-  console.log("error", error);
+  // console.log("isLoading", isLoading);
+  // console.log("error", error);
   console.log("data", data);
 
   const initial = {
@@ -32,6 +33,14 @@ const Signup = () => {
     e.preventDefault();
     ApiRequest("/Account/Register", "POST", userData, null);
   };
+  useEffect(() => {
+    if (data && !isLoading && !error) {
+      Swal.fire("success", `${data.message}`, "success");
+    }
+    if (error && error.detail) {
+      Swal.fire("error", `${error.detail}`, "error");
+    }
+  }, [data, isLoading, error]);
 
   return (
     <>
@@ -52,7 +61,7 @@ const Signup = () => {
                   onChange={handleChange}
                   name="firstName"
                   type="text"
-                  className="text-stone-300 "
+                  className="outline-none w-full"
                   placeholder="write name here..."
                   required
                 />
@@ -63,7 +72,7 @@ const Signup = () => {
                   onChange={handleChange}
                   name="lastName"
                   type="text"
-                  className="text-stone-300"
+                  className="outline-none w-full"
                   placeholder="write name here"
                   required
                 />
@@ -77,6 +86,7 @@ const Signup = () => {
                 onChange={handleChange}
                 name="email"
                 type="email"
+                className="outline-none w-full"
                 placeholder="test1@gmail.com"
                 required
               />
@@ -89,6 +99,7 @@ const Signup = () => {
                 onChange={handleChange}
                 type="password"
                 name="password"
+                className="outline-none w-full"
                 placeholder="**************"
                 required
               />
@@ -101,10 +112,24 @@ const Signup = () => {
                 onChange={handleChange}
                 name="confirmPassword"
                 type="password"
+                className="outline-none w-full"
                 placeholder="**************"
                 required
               />
             </div>
+              <div className="mb-4">
+                {error?.errors?.Password ? (
+                  <span className="text-red-400">
+                    {error.errors.Password[0]}
+                  </span>
+                ) : (
+                  error?.errors?.ConfirmPassword && (
+                    <span className="text-red-400">
+                      {error.errors.ConfirmPassword[0]}
+                    </span>
+                  )
+                )}
+              </div>
             <div className="text-center">
               <div className="mb-5">
                 <button
@@ -117,7 +142,6 @@ const Signup = () => {
               <p className="mb-6">
                 Already A Member?
                 <Link to="/login" className="text-blue-500">
-                  {" "}
                   Log In
                 </Link>
               </p>
