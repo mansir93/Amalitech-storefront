@@ -7,12 +7,12 @@ const Hero = () => {
     <section className="bg-gray-100">
       <div className="min-h-[60vh] min-w-[30vw] flex flex-col lg:flex-row container mx-auto py-8 px-2">
         <div className="flex-1 flex flex-col gap-8 py-20">
-          <h1 className="text-5xl font-black">More than</h1>
-          <h1 className="text-5xl font-black">Just templates</h1>
+          <h1 className="text-5xl font-black">Frontend <br />Team</h1>
+          <h1 className="text-5xl font-black">And Some Outfits </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            Business Deal Of
             <br />
-            vulputate libero et velit interdum, ac aliquet odio mattis.
+           Delivery Products And Services
           </p>
           <Link
             to="/signup"
