@@ -1,6 +1,7 @@
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
 import React from "react";
+import Table from "../Components/Table";
 
 const Dashboard = () => {
   return (
@@ -45,6 +46,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <Table/>
     </section>
   );
 };
