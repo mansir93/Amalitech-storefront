@@ -13,9 +13,8 @@ const Team = () => {
             <img src={MansirImg} alt="" className="w-60 h-60 rounded-full" />
             <p>Mansir Abdul Aziz</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis. Class
-              aptent taciti.
+            FRONTEND DEVELOPER
+
             </p>
           </div>
           <div className="max-w-sm flex flex-col justify-center items-center gap-4">
