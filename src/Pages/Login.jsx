@@ -30,7 +30,6 @@ const Login = () => {
   };
   return (
     <div className="flex w-full bg-gray-100">
-    
       <div className=" flex flex-col justify-center items-center flex-[2]">
         <h1 className="text-5xl text-blue-500 font-bold">Log in</h1>
         <form className="pt-8" onSubmit={handleSubmit}>
@@ -73,12 +72,13 @@ const Login = () => {
               >
                 Forgot Password
               </Link>
-              <button
-                type="submit"
+              <Link
+                // type="submit"
+                to="/account"
                 className="bg-blue-500 text-white text-center rounded flex-1 p-2"
               >
                 Log in
-              </button>
+              </Link>
             </div>
             <div className="text-center mt-4">
               <p>
